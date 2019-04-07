@@ -1,5 +1,8 @@
 What is Alleviate?
 
+<img src="static/imgs/login.png">
+<img src="static/imgs/portal.png">
+
 Alleviate is a platform and model for a standardized health record system. Based in SQL, the primary advantage is to offer doctors and patients quick, easy, and secure access and transfer of health records. 
 The platform consists of a:
 -SQL backend
