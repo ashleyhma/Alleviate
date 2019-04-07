@@ -12,7 +12,7 @@ def load_data():
 
     patient_doc = Patient_doc_relationship(patient_id="1", doctor_id="1")
 
-#     referral1 = Referral(doctor_who_referred="1", specialty="Bones", referred_doctor="2", patient_id="1")
+   #  referral1 = Referral(doctor_who_referred="1", specialty="Bones", referred_doctor="2", patient_id="1")
 
     amoxicillin = Prescription(name="amoxicillin", dosage="100mg", date="Jan 1, 2019", doctor_id="1", patient_id="1")
 
@@ -26,7 +26,7 @@ def load_data():
     db.session.add(Dr_Octocat)
     db.session.add(Dr_Rex)
     db.session.add(patient_doc)
-    db.session.add(referral1)
+   #  db.session.add(referral1)
     db.session.add(amoxicillin)
     db.session.add(visit1)
     db.session.add(stat1)
@@ -34,10 +34,10 @@ def load_data():
    
     db.session.commit()
     
-    if __name__ == "__main__":
+if __name__ == "__main__":
 
-        connect_to_db(app)
-        db.create_all()
-        load_data()
+   connect_to_db(app)
+   db.create_all()
+   load_data()
 
     

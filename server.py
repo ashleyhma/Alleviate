@@ -12,18 +12,26 @@ app.config['SECRET_KEY'] = 'vnkdjnfjknfl1232#'
 @app.route('/')
 def homepage():
 
-    # email = request.forms.get()
 
 
     return render_template("homepage.html")
+
+@app.route('/')
+def homepage():
+
+    email = request.forms.get("email")
+    password = request.forms.get("password")
+
+
+    return redirect("/portal")
 
 
 @app.route('/portal')
 def show_portal():
 
-    patient_id = session.get("patient_id")
+    # patient_id = session.get("patient_id")
 
-    patient = Patient.query.get(patient_id).name
+    patient = Patient.query.filter_by(name="Jane Doe").name
 
     visit = Visit.query.filter_by(patient_id=patient_id).first()
     date = visit.date 
@@ -44,9 +52,9 @@ def show_portal():
     immunization = Immunization.query.filter_by(pateint_id=patient_id).first()
     immunization_name = immunization.name
 
-    referral = Referral.query.filter_by(patient_id=patient_id).first()
-    referred_doctor = referral.referred_doctor
-    specialty = referral.specialty
+    # referral = Referral.query.filter_by(patient_id=patient_id).first()
+    # referred_doctor = referral.referred_doctor
+    # specialty = referral.specialty
 
 
 
@@ -60,9 +68,7 @@ def show_portal():
                             heart_rate=heart_rate,
                             prescription_name=prescription_name,
                             prescription_dosage=prescription_dosage,
-                            immunization_name=immunization_name,
-                            referred_doctor=referred_doctor,
-                            specialty=specialty)
+                            immunization_name=immunization_name)
 
 
 
