@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'vnkdjnfjknfl1232#'
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def homepage():
 
 
@@ -19,8 +19,8 @@ def homepage():
 @app.route('/', methods=['POST'])
 def get_form_data():
 
-    email = request.forms.get("email")
-    password = request.forms.get("password")
+    email = request.form["email"]
+    password = request.form["password"]
 
 
     return redirect("/portal")
@@ -31,26 +31,26 @@ def show_portal():
 
     # patient_id = session.get("patient_id")
 
-    patient = Patient.query.filter_by(name="Jane Doe").name
+    # patient = Patient.query.filter_by(name="Jane Doe").name
 
-    visit = Visit.query.filter_by(patient_id=patient_id).first()
-    date = visit.date 
-    note = visit.note
+    # visit = Visit.query.filter_by(patient_id=patient_id).first()
+    # date = visit.date 
+    # note = visit.note
 
-    doctor_id = visit.doctor_id
-    doctor = Doctor.query.get(doctor_id).name
+    # doctor_id = visit.doctor_id
+    # doctor = Doctor.query.get(doctor_id).name
 
-    stat = Stat.query.filter_by(patient_id=patient_id).first()
-    height = stat.height
-    weight = stat.weight
-    heart_rate = stat.heart_rate
+    # stat = Stat.query.filter_by(patient_id=patient_id).first()
+    # height = stat.height
+    # weight = stat.weight
+    # heart_rate = stat.heart_rate
 
-    prescription = Prescription.query.filter_by(patient_id=patient_id).first()
-    prescription_name = prescription.name
-    prescription_dosage = prescription.dosage 
+    # prescription = Prescription.query.filter_by(patient_id=patient_id).first()
+    # prescription_name = prescription.name
+    # prescription_dosage = prescription.dosage 
 
-    immunization = Immunization.query.filter_by(pateint_id=patient_id).first()
-    immunization_name = immunization.name
+    # immunization = Immunization.query.filter_by(pateint_id=patient_id).first()
+    # immunization_name = immunization.name
 
     # referral = Referral.query.filter_by(patient_id=patient_id).first()
     # referred_doctor = referral.referred_doctor
@@ -59,16 +59,7 @@ def show_portal():
 
 
     return render_template("portal.html", 
-                            patient=patient,
-                            date=date,
-                            note=note,
-                            doctor=doctor,
-                            height=height,
-                            weight=weight,
-                            heart_rate=heart_rate,
-                            prescription_name=prescription_name,
-                            prescription_dosage=prescription_dosage,
-                            immunization_name=immunization_name)
+                           )
 
 
 
