@@ -16,8 +16,8 @@ def homepage():
 
     return render_template("homepage.html")
 
-@app.route('/')
-def homepage():
+@app.route('/', methods=['POST'])
+def get_form_data():
 
     email = request.forms.get("email")
     password = request.forms.get("password")
