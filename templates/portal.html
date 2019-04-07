@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> 
+
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">Alleviate</span>
+    </nav>
+
+  </head>
+
+
+  <body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="column">
+            </div>
+            <div class="column">
+                <b>Date:</b> {{ date }}
+                <b>Doctor:</b> {{ doctor }}
+
+                <br>
+                <br>
+
+                <b>Height:</b> {{ height }} <b>Weight:</b> {{ weight }}
+                <b>Heart Rate:</b> {{ heart_rate }}
+
+                <br>
+                <br>
+
+                <b>Prescription:</b> {{ prescription_name }} {{ prescription_dosage }}
+                <br>
+                <br>
+
+                <b>Immunization:</b> {{ immunization_name }}
+
+                <b>Refferal:</b> {{ referred_doctor }}  {{ specialty }}
+
+            
+
+
+            </div>
+            <div class="column">
+            </div>
+        </div>
+    </div>
+
+  </body>
+</html>

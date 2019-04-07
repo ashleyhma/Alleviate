@@ -12,7 +12,7 @@ def load_data():
 
     patient_doc = Patient_doc_relationship(patient_id="1", doctor_id="1")
 
-    referral1 = Referral(doctor_who_referred="1", specialty="Bones", referred_doctor="2")
+#     referral1 = Referral(doctor_who_referred="1", specialty="Bones", referred_doctor="2", patient_id="1")
 
     amoxicillin = Prescription(name="amoxicillin", dosage="100mg", date="Jan 1, 2019", doctor_id="1", patient_id="1")
 
@@ -20,7 +20,7 @@ def load_data():
 
     stat1 = Stat(height="5 Feet 3 Inches", weight="115", heart_rate="65 BPM", patient_id="1")
 
-    immunization1 = Immunization(date="January 1, 2019", immunization_name="Tetanus Shot")
+    immunization1 = Immunization(date="January 1, 2019", name="Tetanus Shot")
 
     db.session.add(Jane)
     db.session.add(Dr_Octocat)
